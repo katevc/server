@@ -9,7 +9,7 @@ const app = express()
 const port = process.env.PORT || 3001;
 
 const news_model = require('./news_model')
-const config = require('./config')
+//const config = require('./config')
 
 app.use(cors())
 app.use(express.json())

@@ -1,21 +1,21 @@
 //Postgres Client
 const { response } = require('express');
 
-const config = require('./config')
+//const config = require('./config')
 
 const Pool = require('pg').Pool
 const pool = new Pool({
-  /*user: 'solstice',
+  user: 'solstice',
   host: 'containerprod-pg.aws.vdc.it.umich.edu',
   database: 'solstice',
   password: 'ChangeMeNow_2020_solstice',
-  port: 5432,*/
+  port: 5432,
 
-  user: config.pgUser,
+  /*user: config.pgUser,
   host: config.pgHost,
   database: config.pgDatabase,
   password: config.pgPassword,
-  port: config.pgPort
+  port: config.pgPort*/
 });
 
 const getEntries = () => {
