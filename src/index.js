@@ -3,10 +3,10 @@ const cors = require('cors')
 
 //Express App Setup
 
-//Initialization
+//Initialization 
 const express = require('express')
 const app = express()
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 8080;
 
 const news_model = require('./news_model')
 //const config = require('./config')
@@ -19,6 +19,7 @@ app.use(function (req, res, next) {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Access-Control-Allow-Headers');
   next();
 });
+
 
 //get all current entries from database 
 app.get('/', (req, res) => {
