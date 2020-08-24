@@ -34,7 +34,7 @@ app.get('/', (req, res) => {
 })
 
 //add new entry to database
-app.post('/entries', (req, res) => {
+app.post('/', (req, res) => {
   news_model.createEntry(req.body)
   .then(response => {
     res.status(200).send(response);
@@ -44,7 +44,7 @@ app.post('/entries', (req, res) => {
   })
 })
 
-app.delete('/entries/:id', (req, res) => {
+app.delete('/', (req, res) => {
   console.log("TRIES TO DELETE");
   news_model.deleteEntry(req.params.id)
   .then(response => {
