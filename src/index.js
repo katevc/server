@@ -35,6 +35,7 @@ app.get('/', (req, res) => {
 
 //add new entry to database
 app.post('/entries', (req, res) => {
+  //console.log("this is the ", req.body);
   news_model.createEntry(req.body)
   .then(response => {
     res.status(200).send(response);

@@ -33,12 +33,14 @@ const getEntries = () => {
 }
 const createEntry = (body) => {
   return new Promise(function(resolve, reject) {
-    const { author, text, title } = body
-    pool.query("INSERT INTO public.posts (author, text, title, date_created) VALUES ($1, $2, $3, CURRENT_TIMESTAMP) RETURNING *", [author, text, title], (error, results) => {
+    const { author, text, title, imageURL } = body
+    //console.log("value of url", imageURL)
+    pool.query("INSERT INTO public.posts (author, text, title, image_url, date_created) VALUES ($1, $2, $3, $4, CURRENT_TIMESTAMP)", [author, text, title, imageURL], (error, results) => {
       if (error) {
+        //console.log(author, text, title, URL)
         reject(error)
       }
-      resolve(`A new entry has been added added`)
+      resolve(`A new entry has been added. Author: ${author} text: ${text} title: ${title} URL:${imageURL}`)
     })
   })
 }
