@@ -18,14 +18,3 @@ COPY . .
 
 # RUN npm run start
 CMD [ "node", "src/index.js" ]
-
-# Production Environment
-FROM bitnami/nginx
-#COPY --from=build /usr/src/app/build /usr/share/nginx/html
-COPY --from=build /usr/src/app/build /app
-
-# Uses port which is used by the actual application
-EXPOSE 8080 
- 
-# Finally runs the container
-CMD ["nginx", "-g", "daemon off;"]
