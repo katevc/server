@@ -1,6 +1,8 @@
   
 # Specify a base image
-FROM 14.10-alpine3.12 AS alpine
+FROM alpine:3.10 AS alpine
+
+ENV NODE_VERSION 14.10.1
 
 WORKDIR /app
 
