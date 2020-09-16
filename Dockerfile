@@ -16,7 +16,8 @@ RUN npm install react-scripts -g
 # Copies everything over to Docker environment
 COPY . .
 
-RUN npm run build
+# RUN npm run start
+CMD [ "node", "src/index.js" ]
 
 # Production Environment
 FROM bitnami/nginx
