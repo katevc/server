@@ -2,7 +2,7 @@
 # Specify a base image
 FROM alpine:3.10
 
-ENV NODE_VERSION 14.10.1
+ENV NODE_VERSION 14.10.0
 
 WORKDIR /app
 
